@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkatesh Shirur's Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+<style>
+    /* Global Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    /* Header */
+    .header {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        padding: 100px 0;
+        color: white;
+    }
+    .header h1 {
+        font-size: 3.5em;
+        font-weight: bold;
+    }
+    .header p {
+        font-size: 1.2em;
+    }
+
+    /* Section Headings */
+    h2 {
+        position: relative;
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    h2::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 4px;
+        background: #2575fc;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Sections */
+    section {
+        padding: 60px 0;
+    }
+    #about, #contact {
+        background-color: #f1f1f1;
+    }
+
+    /* About Me Section */
+    #about {
+        padding: 60px 0;
+    }
+
+    #about h2, #about h3 {
+        font-weight: 700;
+        color: #333;
+    }
+
+    #about p.lead {
+        max-width: 800px;
+        margin: 0 auto 40px;
+        color: #555;
+    }
+
+    .education-container .col-md-4 {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .education-container h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 8px;
+    }
+
+    .education-container p {
+        font-size: 1rem;
+        color: #666;
+        margin: 0;
+    }
+
+    /* Optional hover effect */
+    .education-container .col-md-4:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+
+
+    /* Project Cards */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: #333;
+        border: none;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+        text-align: center;
+    }
+
+
+ /* Skills Section */
+#skills {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+/* Skill Bars */
+.skill-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    padding-left: 10px;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+}
+
+.python { width: 70%; background-color: #6a11cb; }  /* Purple */
+.sql { width: 75%; background-color: #2575fc; }     /* Blue */
+.html-css { width: 70%; background-color: #ffc107; } /* Yellow */
+.bootstrap { width: 60%; background-color: #fd7e14; } /* Orange */
+.figma { width: 80%; background-color: #ff69b4; }     /* Pink */
+.tableau { width: 75%; background-color: #6610f2; }    /* Indigo */
+
+
+
+
+/* Contact Section */
+#contact {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Light background for the contact section */
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styles */
+.form-control {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects for input focus */
+}
+
+.form-control:focus {
+    border-color: #6a11cb; /* Highlight color on focus */
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); /* Subtle shadow effect */
+}
+
+.btn-primary {
+    background-color: #6a11cb; /* Primary button color */
+    border: none; /* Remove default border */
+}
+
+.btn-primary:hover {
+    background-color: #5a0eab; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px 0;
+    background-color: #f1f1f1; /* Light gray footer */
+}
+
+
+
+    /* Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.8s forwards;
+    }
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Venkatesh Shirur</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="header text-center fade-in">
+    <div class="container">
+        <h1 class="display-4">Hello, I'm Venkatesh Shirur</h1>
+        <p class="lead">Aspiring Data Analyst | Frontend Developer</p>
+    </div>
+</header>
+
+<!-- About Me Section -->
+<section id="about" class="bg-light">
+    <div class="container">
+        <h2 class="text-center">About Me</h2>
+        <p class="lead text-center">
+            I am a Computer Science student with hands-on experience in data analysis, machine learning, and a strong interest in UI/UX design. I am seeking an internship or entry-level position to leverage my analytical and design skills in innovative, data-driven projects.
+        </p>
+        
+        <h3 class="text-center mt-5">Education</h3>
+        
+        <div class="row education-container justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+                <h5>Bachelor of Engineering (B.E.) in Computer Science</h5>
+                <p>KLS Gogte Institute of Technology</p>
+                <p>2020 - 2024</p>
+                <p>CGPA: 7.95/10</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <h5>Senior Secondary (XII), Science</h5>
+                <p>PUE Karnataka Board</p>
+                <p>2020</p>
+                <p>Percentage: 80.16%</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <h5>Secondary (X)</h5>
+                <p>KSEEB Board</p>
+                <p>2018</p>
+                <p>Percentage: 84.32%</p>
+            </div>
+        </div>
+
+        <h3 class="text-center mt-5">Work Experience</h3>
+        
+        <div class="row experience-container justify-content-center">
+            <div class="col-md-4 text-center mb-4 mx-2"> <!-- Added mx-2 for spacing -->
+                <h5>Student Intern</h5>
+                <p>RoborosX Omni Tech Solutions LLP, Bangalore</p>
+                <p>Feb 2024 - Apr 2024</p>
+                <ul class="list-unstyled">
+                    <li>Gained hands-on experience in frontend development using HTML, CSS, and Bootstrap.</li>
+                    <li>Collaborated on team projects to enhance user experience.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Projects Section -->
+<section id="projects" class="fade-in">
+    <div class="container">
+        <h2 class="text-center mb-5">Projects</h2>
+        <div class="row">
+            <!-- Project 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card card1 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Logistic Regression for Survival Prediction</h5>
+                        <p class="card-text">Developed and deployed a logistic regression model to predict Titanic survival using Streamlit.</p>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#projectModal1">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card card2 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Sign Language Recognition System</h5>
+                        <p class="card-text">Machine learning-based application that recognizes hand signs corresponding to alphabets and converts them into text.</p>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#projectModal2">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="col-md-6 mb-4">
+                <div class="card card3 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Travel Website Design</h5>
+                        <p class="card-text">Developed a user-friendly website for travelers to explore destinations, featuring location information and travel tips.</p>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#projectModal3">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="col-md-6 mb-4">
+                <div class="card card4 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Market Basket Analysis</h5>
+                        <p class="card-text">Analyzed customer purchasing patterns using association rules on the Online Retail dataset.</p>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#projectModal4">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h2 class="text-center mb-5 fade-in">Skills</h2>
+        <div class="col-md-8 mx-auto">
+            <div class="skill-bar">
+                <div class="skill-bar-fill python">Python</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill sql">SQL</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill html-css">HTML & CSS</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill bootstrap">Bootstrap</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill figma">Figma</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-bar-fill tableau">Tableau</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="fade-in">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact</h2>
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left mb-4">
+                <h4 class="text-primary">Contact Information</h4>
+                <p>Email: <a href="mailto:venkateshshirur11@gmail.com" class="text-secondary">venkateshshirur11@gmail.com</a></p>
+                <p>GitHub: <a href="https://github.com/venkateshshirur" target="_blank" class="text-secondary">github.com/venkateshshirur</a></p>
+            </div>
+            <div class="col-md-6">
+                <form id="contact-form" class="bg-light p-4 rounded shadow">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center mt-5">
+    <div class="container">
+        &copy; 2024 Venkatesh Shirur
+    </div>
+</footer>
+
+
+<!-- Include Bootstrap and jQuery Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Smooth scrolling script -->
+<script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+
+
+</body>
+
+</html>
